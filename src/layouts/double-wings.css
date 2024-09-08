@@ -1,0 +1,84 @@
+.layout-double-wings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.layout-double-wings-main {
+  display: flex;
+  justify-content: center;
+}
+
+.layout-double-wings-main > .layout-double-wings__sidebar:first-child {
+  margin-right: 20px;
+}
+
+.layout-double-wings-main > .layout-double-wings__sidebar:last-child {
+  margin-left: 20px;
+}
+
+.layout-double-wings__header {
+  width: 100vw;
+  box-sizing: border-box;
+  height: 80px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(43, 149, 255, 0.3);
+  display: flex;
+  z-index: 100;
+}
+
+.layout-double-wings__sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+}
+
+.layout-double-wings-body {
+  overflow-y: auto;
+  height: var(--content-height);
+  max-height: var(--content-height);
+  overflow-y: auto;
+}
+
+.layout-double-wings__content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  /** 最大宽度 1280px*0.8, 最小宽度 340px, 当屏幕宽度在 1280px - 425px之间时，宽度为屏幕宽度的 80% */
+  width: 80%;
+  max-width: calc(1280px * 0.6); /* 1280px * 0.8 */
+  min-width: 255px;
+  min-height: var(--content-height);
+}
+
+:root {
+  --content-height: calc(100vh - 80px);
+}
+
+/* @media screen and (min-width: 1680px) {
+  .layout-double-wings__sidebar {
+    display: none !important;
+  }
+} */
+
+/* 当屏幕宽度小于 425px 时，宽度为 100% */
+@media screen and (min-width: 425px) {
+  .layout-double-wings__content {
+    width: 100%;
+  }
+}
+
+.layout-double-wings__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout-double-wings__footer > * {
+  flex: 1;
+}

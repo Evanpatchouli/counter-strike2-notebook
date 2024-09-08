@@ -1,0 +1,12 @@
+.anchor-list-item {
+  cursor: pointer;
+  font-size: small !important;
+}
+
+.anchor-list-wrapper {
+  border-left: 1px solid #e8eaee;
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  padding: 0.8rem 1rem;
+}

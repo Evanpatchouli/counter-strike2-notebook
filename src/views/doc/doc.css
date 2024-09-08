@@ -1,0 +1,41 @@
+.cs2-notebook-article {
+  padding-inline: 1rem;
+  width: 100%;
+  padding-bottom: 1rem; /** 更美观 */
+
+  em {
+    font-family: "猫啃珠圆体";
+    font-weight: bold;
+  }
+
+  .wpimg {
+    width: 50%;
+  }
+
+  span {
+    &.隐秘 {
+      color: #d85752;
+      font-weight: bold;
+    }
+    &.受限 {
+      color: #c142de;
+      font-weight: bold;
+    }
+    &.保密 {
+      color: #7f50f6;
+      font-weight: bold;
+    }
+    &.军规 {
+      color: #516af2;
+      font-weight: bold;
+    }
+  }
+}
+
+.doc-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

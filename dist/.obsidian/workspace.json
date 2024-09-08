@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "155a8bc3b53fabf5",
+    "type": "split",
+    "children": [
+      {
+        "id": "09ba1aa5c26ddd12",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6612deb37a34c403",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/指令大全/快速丢闪.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d41c335b95ec9a19",
+    "type": "split",
+    "children": [
+      {
+        "id": "d3f1184d2df4a869",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0973706d7e72443f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4cf348d4b72138fc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "78d791d3a1d4d355",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a89fd15e44abcf3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "8aee04548cf31e8d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5887d5bec464675c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/指令大全/快速丢闪.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ba2ed5733fba518a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/指令大全/快速丢闪.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "068dd22c84f9195b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5544f9ab01957de8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/指令大全/快速丢闪.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "6612deb37a34c403",
+  "lastOpenFiles": [
+    "docs/指令大全/跑图必备指令.md",
+    "docs/指令大全/DEMO.md",
+    "docs/指令大全/炫彩UI.md",
+    "docs/道具手册/炙热沙城/烟雾弹/A.md",
+    "docs/道具手册/炙热沙城/烟雾弹/暗道烟.md",
+    "docs/战术手册/炙热沙城/地图点位.md",
+    "images/48px-De_inferno.png",
+    "images/cs2_bg.svg",
+    "images/De_nuke.png",
+    "images/De_overpass.png",
+    "images/De_vertigo.png",
+    "images/logo_cs2_header.svg",
+    "images/Xbox出生位快烟-1-瞄点.png",
+    "images/暗道烟-忍者位-瞄点.png",
+    "images/暗道烟-忍者位-站位.png",
+    "images/48px-De_vertigo.png",
+    "vedios/CT深烟.mp4"
+  ]
+}

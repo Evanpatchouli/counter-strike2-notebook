@@ -1,0 +1,77 @@
+.syntax-hight-wrapper {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  background-color: #f6f8fa !important;
+
+  * {
+    background-color: #f6f8fa;
+    font-size: 95% !important;
+  }
+}
+
+.markdown-title {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.markdown-img-wrapper {
+  text-align: center;
+  > figcaption {
+    font-size: small;
+    color: grey;
+    margin-block: 1em;
+
+    &::before {
+      content: "•"; /* 使用 Unicode 字符表示小圆点 */
+      margin-right: 8px; /* 调整圆点和文字之间的间距 */
+      color: grey; /* 设置圆点的颜色 */
+    }
+  }
+}
+
+.markdown-pre {
+  overflow: auto;
+  max-height: 66.6vh;
+  /** 宽度等于容器*/
+  width: 100%;
+  /* max-width: calc(1280px * 0.6); */
+  position: relative;
+}
+
+.markdown-blockquote {
+  background-color: #f9f9f9;
+  border-left: 10px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1.5rem;
+  /** 用伪元素添加斜体阴影*/
+  position: relative;
+}
+
+.markdown-blockquote-shadow {
+  position: absolute;
+  top: -0.65rem;
+  left: 0;
+
+  padding: 0rem 1.78rem;
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.07);
+  transform: translate(-2px, 2px) skew(-10deg);
+  font-style: italic;
+  white-space: pre;
+
+  /* position: absolute;
+  top: -0.5rem;
+  left: calc(1px + 1.5rem + 1.3rem);
+
+  padding: 0rem 0rem;
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.07);
+  transform: translate(-2px, 2px) skew(-10deg);
+  font-style: normal;
+  white-space: pre;
+  transform: skewX(-70deg); */
+}
