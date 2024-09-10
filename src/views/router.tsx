@@ -4,6 +4,7 @@ import Doc from "./doc";
 import tabs, { flattenTabs } from "../components/sidebar/tabs";
 import ErrorPage from "./error";
 import { AppError } from "./error/app-error";
+import utils from "./utils";
 
 const tabsFlatten = flattenTabs();
 
@@ -135,7 +136,7 @@ const router = createBrowserRouter(
                 headings: [],
               };
             }
-            const res = await fetch(`/cs2-notebook/docs/${filepath}.md`);
+            const res = await fetch(utils.encodeResourceURI(`/cs2-notebook/docs/${filepath}.md`));
             // console.log("res", res);
             const text = await res.text();
             // console.log("text", text);
