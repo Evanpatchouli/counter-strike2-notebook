@@ -184,6 +184,13 @@ const tabs = [
                 icon: "",
                 type: "button",
               },
+              {
+                id: "2-2-1-19",
+                title: "匪口烟",
+                path: "道具手册/炙热沙城/烟雾弹/匪口烟",
+                icon: "",
+                type: "button",
+              },
             ],
           },
         ],

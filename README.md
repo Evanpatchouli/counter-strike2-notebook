@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# CS2-NOTEBOOK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a notebook for the CS2. It is a collection of notes, code, and examples that I have created to help me better in CS2. I hope that it can help you too!
 
-Currently, two official plugins are available:
+You can read it online at:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- <http://124.221.85.140/cs2-notebook>
+- <https://evanpatchouli.github.io/cs2-notebook>
 
-## Expanding the ESLint configuration
+## Develop
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To develop this notebook, you will need to have node installed.
 
-- Configure the top-level `parserOptions` property like this:
+**Install dependencies**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Start the development server**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+**Build the notebook**
+
+```bash
+npm run build
+```
+
+**Ather scripts**
+
+- deploy: Deploy the notebook to nginx locally.
+- sync: Sync the notebook with the dist-repo. Just for me.
+
+## Deploy
+
+If you want to deploy this notebook on your own server, you can use the following steps.
+
+**Example of Nginx**
+
+1. Create a new directory `cs2-notebook` on your server.
+2. Copy all the files from dist to the `cs2-notebook` directory.
+3. Update your nginx conf with the following content:
+
+```nginx
+server {
+    location /cs2-notebook/ {
+        root /path/to/cs2-notebook;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+
+4. If your server's locale is not `zh_CN.UTF-8`, for example of `en_US.UTF-8`: reate a `.env` file in the root of the `cs2-notebook` directory with the following content:
+
+```env
+VITE_SERVER_LANG=en_US.UTF-8
+```
+
+That because the function `encodeResourceURI` at `src\views\utils\index.ts` will encode the resource URI with `zh_CN.UTF-8` by default. If your server's locale is not `zh_CN.UTF-8`, you need to set the `VITE_SERVER_LANG` to your server's locale, and update the codes of `encodeResourceURI` at `src\views\utils\index.ts` to support your server's locale.
