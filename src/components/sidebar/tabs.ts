@@ -191,6 +191,13 @@ const tabs = [
                 icon: "",
                 type: "button",
               },
+              {
+                id: "2-2-1-20",
+                title: "蓝箱灭火烟",
+                path: "道具手册/炙热沙城/烟雾弹/蓝箱灭火烟",
+                icon: "",
+                type: "button",
+              },
             ],
           },
         ],
