@@ -5,6 +5,7 @@ import tabs, { flattenTabs } from "../components/sidebar/tabs";
 import ErrorPage from "./error";
 import { AppError } from "./error/app-error";
 import utils from "./utils";
+import About from "./about";
 
 const tabsFlatten = flattenTabs();
 
@@ -146,6 +147,10 @@ const router = createBrowserRouter(
               headings: getHeadings(text, true),
             };
           },
+        },
+        {
+          path: "about",
+          element: <About />,
         },
       ],
     },

@@ -1,6 +1,6 @@
 import { Collapse, colors, List, ListItem, ListItemButton, ListItemText, ListSubheader } from "@mui/material";
 import { NavigateFunction, useLocation, useNavigate } from "react-router";
-import { useClickAway, useMeta, useMount, useProvide } from "@evanpatchouli/react-hooks-kit";
+import { useClickAway, useMeta, useProvide } from "@evanpatchouli/react-hooks-kit";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import sleep from "../../hooks/sleep";
 import React, { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import tabs from "./tabs";
 import { ExitToAppOutlined } from "@mui/icons-material";
 import useResize from "../../hooks/useResize";
 import Blank from "../blank";
+import useTheme from "../../hooks/useTheme";
 
 // const findIsChildrenSelected = (_tabs: typeof tabs, selected: string): boolean => {
 //   return _tabs.some((tab) => tab.id === selected || findIsChildrenSelected(tab.children || [], selected));
@@ -121,6 +122,7 @@ const Sidebar: React.FC = () => {
   const [open, setOpen] = useMeta(initOpenMap);
   const nav = useNavigate();
   const url = useLocation();
+  const theme = useTheme();
 
   useEffect(() => {
     // 根据路由获取当前选中的 tab，并设置 selected，同时递归遍历 tabs，展开所有父级 tab（如果有的话）
@@ -147,7 +149,7 @@ const Sidebar: React.FC = () => {
     if (selectedTabId) {
       setSelected(selectedTabId);
     }
-  }, [url.pathname, setOpen]);
+  }, [url.pathname]);
 
   const [isWidthEnough, setIsWidthEnough] = useState(true);
 
@@ -189,11 +191,10 @@ const Sidebar: React.FC = () => {
       sx={{
         pr: "1rem",
         width: "280px",
-        borderRight: "1px solid #e8eaee",
+        borderRight: `1px solid ${theme.borderColor}`,
         height: "calc(var(--content-height) - 8px)", // 8px 大概是由于 header 的边框及 padding 造成的偏差
         position: "fixed",
         left: show ? "1rem" : "-320px", // "1rem" 为左侧边距，与右侧栏的右边距保持一致
-        background: "#fff",
         transition: "left 0.3s ease-in-out",
         overflowY: "auto",
       }}

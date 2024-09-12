@@ -40,11 +40,22 @@
 }
 
 .markdown-blockquote {
-  background-color: #f9f9f9;
   border-left: 10px solid #ccc;
   border-radius: 5px;
   padding: 1rem 1.5rem;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 1.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .markdown-blockquote {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown-blockquote {
+    background-color: #212121;
+  }
 }

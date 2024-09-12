@@ -5,6 +5,7 @@ import { ExitToAppOutlined } from "@mui/icons-material";
 import { colors } from "@mui/material";
 import "./index.css";
 import useResize from "../../hooks/useResize";
+import useTheme from "../../hooks/useTheme";
 
 type Heading = { id: string; children?: Heading[] };
 
@@ -24,6 +25,7 @@ const renderAnchorList = (headings: Heading[]) => {
 };
 
 export default function AnchorList() {
+  const theme = useTheme();
   const article = useLoaderData() as {
     title: string;
     text: string;
@@ -64,10 +66,10 @@ export default function AnchorList() {
       style={{
         position: "fixed",
         right: show ? "1rem" : "-320px", // "1rem" 是为了避免与右侧的页面全局滚动条重叠
-        background: "#fff",
         transition: "right 0.3s ease-in-out",
         height: "calc(var(--content-height) - 8px)", // 8px 大概是由于 header 的边框及 padding 造成的偏差
         overflowY: "auto",
+        borderLeft: `1px solid ${theme.borderColor}`,
       }}
     >
       <div

@@ -12752,7 +12752,7 @@ var withEmotionCache = function withEmotionCache2(func) {
     return func(props, cache2, ref);
   });
 };
-var ThemeContext = /* @__PURE__ */ reactExports.createContext({});
+var ThemeContext$1 = /* @__PURE__ */ reactExports.createContext({});
 var _extends$1 = { exports: {} };
 var hasRequired_extends;
 function require_extends() {
@@ -12776,7 +12776,7 @@ var _extendsExports = require_extends();
 const _extends = /* @__PURE__ */ getDefaultExportFromCjs(_extendsExports);
 var Global = /* @__PURE__ */ withEmotionCache(function(props, cache2) {
   var styles2 = props.styles;
-  var serialized = serializeStyles([styles2], void 0, reactExports.useContext(ThemeContext));
+  var serialized = serializeStyles([styles2], void 0, reactExports.useContext(ThemeContext$1));
   var sheetRef = reactExports.useRef();
   useInsertionEffectWithLayoutFallback(function() {
     var key = cache2.key + "-global";
@@ -12908,7 +12908,7 @@ var createStyled$3 = function createStyled(tag, options) {
         for (var key in props) {
           mergedProps[key] = props[key];
         }
-        mergedProps.theme = reactExports.useContext(ThemeContext);
+        mergedProps.theme = reactExports.useContext(ThemeContext$1);
       }
       if (typeof props.className === "string") {
         className = getRegisteredStyles(cache2.registered, classInterpolations, props.className);
@@ -13144,7 +13144,7 @@ const styledEngine = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.define
   __proto__: null,
   GlobalStyles,
   StyledEngineProvider,
-  ThemeContext,
+  ThemeContext: ThemeContext$1,
   css: css$2,
   default: styled$2,
   internal_processStyles,
@@ -13190,7 +13190,7 @@ const deepmerge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePro
   default: deepmerge$1,
   isPlainObject: isPlainObject$2
 }, Symbol.toStringTag, { value: "Module" }));
-const _excluded$z = ["values", "unit", "step"];
+const _excluded$B = ["values", "unit", "step"];
 const sortBreakpointsValues = (values2) => {
   const breakpointsAsArray = Object.keys(values2).map((key) => ({
     key,
@@ -13221,7 +13221,7 @@ function createBreakpoints(breakpoints) {
     },
     unit = "px",
     step = 5
-  } = breakpoints, other = _objectWithoutPropertiesLoose(breakpoints, _excluded$z);
+  } = breakpoints, other = _objectWithoutPropertiesLoose(breakpoints, _excluded$B);
   const sortedValues = sortBreakpointsValues(values2);
   const keys2 = Object.keys(sortedValues);
   function up(key) {
@@ -14202,14 +14202,14 @@ function applyStyles$2(key, styles2) {
   }
   return {};
 }
-const _excluded$y = ["breakpoints", "palette", "spacing", "shape"];
+const _excluded$A = ["breakpoints", "palette", "spacing", "shape"];
 function createTheme$2(options = {}, ...args) {
   const {
     breakpoints: breakpointsInput = {},
     palette: paletteInput = {},
     spacing: spacingInput,
     shape: shapeInput = {}
-  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$y);
+  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$A);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
   let muiTheme = deepmerge$1({
@@ -14243,15 +14243,15 @@ const createTheme$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defin
 function isObjectEmpty$1(obj) {
   return Object.keys(obj).length === 0;
 }
-function useTheme$3(defaultTheme2 = null) {
-  const contextTheme = reactExports.useContext(ThemeContext);
+function useTheme$6(defaultTheme2 = null) {
+  const contextTheme = reactExports.useContext(ThemeContext$1);
   return !contextTheme || isObjectEmpty$1(contextTheme) ? defaultTheme2 : contextTheme;
 }
 const systemDefaultTheme$2 = createTheme$2();
-function useTheme$2(defaultTheme2 = systemDefaultTheme$2) {
-  return useTheme$3(defaultTheme2);
+function useTheme$5(defaultTheme2 = systemDefaultTheme$2) {
+  return useTheme$6(defaultTheme2);
 }
-const _excluded$x = ["sx"];
+const _excluded$z = ["sx"];
 const splitProps = (props) => {
   var _props$theme$unstable, _props$theme;
   const result = {
@@ -14271,7 +14271,7 @@ const splitProps = (props) => {
 function extendSxProp(props) {
   const {
     sx: inSx
-  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$x);
+  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$z);
   const {
     systemProps,
     otherProps
@@ -14330,7 +14330,7 @@ function clsx() {
   for (var e2, t2, f2 = 0, n2 = "", o2 = arguments.length; f2 < o2; f2++) (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
   return n2;
 }
-const _excluded$w = ["className", "component"];
+const _excluded$y = ["className", "component"];
 function createBox(options = {}) {
   const {
     themeId,
@@ -14342,11 +14342,11 @@ function createBox(options = {}) {
     shouldForwardProp: (prop) => prop !== "theme" && prop !== "sx" && prop !== "as"
   })(styleFunctionSx$1);
   const Box2 = /* @__PURE__ */ reactExports.forwardRef(function Box3(inProps, ref) {
-    const theme2 = useTheme$2(defaultTheme2);
+    const theme2 = useTheme$5(defaultTheme2);
     const _extendSxProp = extendSxProp(inProps), {
       className,
       component = "div"
-    } = _extendSxProp, other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$w);
+    } = _extendSxProp, other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$y);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(BoxRoot, _extends$2({
       as: component,
       ref,
@@ -14526,7 +14526,7 @@ const getDisplayName = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defi
   default: getDisplayName$1,
   getFunctionName
 }, Symbol.toStringTag, { value: "Module" }));
-const _excluded$v = ["ownerState"], _excluded2$4 = ["variants"], _excluded3$2 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+const _excluded$x = ["ownerState"], _excluded2$4 = ["variants"], _excluded3$2 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
 function isEmpty$1(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -14562,7 +14562,7 @@ function defaultOverridesResolver$1(slot) {
 function processStyleArg$1(callableStyle, _ref) {
   let {
     ownerState
-  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded$v);
+  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded$x);
   const resolvedStylesArg = typeof callableStyle === "function" ? callableStyle(_extends$2({
     ownerState
   }, props)) : callableStyle;
@@ -14761,7 +14761,7 @@ function useThemeProps({
   defaultTheme: defaultTheme2,
   themeId
 }) {
-  let theme2 = useTheme$2(defaultTheme2);
+  let theme2 = useTheme$5(defaultTheme2);
   if (themeId) {
     theme2 = theme2[themeId] || theme2;
   }
@@ -15147,7 +15147,7 @@ function resolveComponentProps(componentProps, ownerState, slotState) {
   }
   return componentProps;
 }
-const _excluded$u = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
+const _excluded$w = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
 function useSlotProps(parameters) {
   var _parameters$additiona;
   const {
@@ -15155,7 +15155,7 @@ function useSlotProps(parameters) {
     externalSlotProps,
     ownerState,
     skipResolvingSlotProps = false
-  } = parameters, rest = _objectWithoutPropertiesLoose(parameters, _excluded$u);
+  } = parameters, rest = _objectWithoutPropertiesLoose(parameters, _excluded$w);
   const resolvedComponentsProps = skipResolvingSlotProps ? {} : resolveComponentProps(externalSlotProps, ownerState);
   const {
     props: mergedProps,
@@ -15169,12 +15169,62 @@ function useSlotProps(parameters) {
   }), ownerState);
   return props;
 }
+const ThemeContext = /* @__PURE__ */ reactExports.createContext(null);
+function useTheme$4() {
+  const theme2 = reactExports.useContext(ThemeContext);
+  return theme2;
+}
+const hasSymbol = typeof Symbol === "function" && Symbol.for;
+const nested = hasSymbol ? Symbol.for("mui.nested") : "__THEME_NESTED__";
+function mergeOuterLocalTheme(outerTheme, localTheme) {
+  if (typeof localTheme === "function") {
+    const mergedTheme = localTheme(outerTheme);
+    return mergedTheme;
+  }
+  return _extends$2({}, outerTheme, localTheme);
+}
+function ThemeProvider$2(props) {
+  const {
+    children,
+    theme: localTheme
+  } = props;
+  const outerTheme = useTheme$4();
+  const theme2 = reactExports.useMemo(() => {
+    const output = outerTheme === null ? localTheme : mergeOuterLocalTheme(outerTheme, localTheme);
+    if (output != null) {
+      output[nested] = outerTheme !== null;
+    }
+    return output;
+  }, [localTheme, outerTheme]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeContext.Provider, {
+    value: theme2,
+    children
+  });
+}
+const _excluded$v = ["value"];
 const RtlContext = /* @__PURE__ */ reactExports.createContext();
+function RtlProvider(_ref) {
+  let {
+    value
+  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded$v);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(RtlContext.Provider, _extends$2({
+    value: value != null ? value : true
+  }, props));
+}
 const useRtl = () => {
   const value = reactExports.useContext(RtlContext);
   return value != null ? value : false;
 };
 const PropsContext = /* @__PURE__ */ reactExports.createContext(void 0);
+function DefaultPropsProvider({
+  value,
+  children
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(PropsContext.Provider, {
+    value,
+    children
+  });
+}
 function getThemeProps(params) {
   const {
     theme: theme2,
@@ -15206,6 +15256,50 @@ function useDefaultProps$1({
     }
   });
 }
+const EMPTY_THEME = {};
+function useThemeScoping(themeId, upperTheme, localTheme, isPrivate = false) {
+  return reactExports.useMemo(() => {
+    const resolvedTheme = themeId ? upperTheme[themeId] || upperTheme : upperTheme;
+    if (typeof localTheme === "function") {
+      const mergedTheme = localTheme(resolvedTheme);
+      const result = themeId ? _extends$2({}, upperTheme, {
+        [themeId]: mergedTheme
+      }) : mergedTheme;
+      if (isPrivate) {
+        return () => result;
+      }
+      return result;
+    }
+    return themeId ? _extends$2({}, upperTheme, {
+      [themeId]: localTheme
+    }) : _extends$2({}, upperTheme, localTheme);
+  }, [themeId, upperTheme, localTheme, isPrivate]);
+}
+function ThemeProvider$1(props) {
+  const {
+    children,
+    theme: localTheme,
+    themeId
+  } = props;
+  const upperTheme = useTheme$6(EMPTY_THEME);
+  const upperPrivateTheme = useTheme$4() || EMPTY_THEME;
+  const engineTheme = useThemeScoping(themeId, upperTheme, localTheme);
+  const privateTheme = useThemeScoping(themeId, upperPrivateTheme, localTheme, true);
+  const rtlValue = engineTheme.direction === "rtl";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider$2, {
+    theme: privateTheme,
+    children: /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeContext$1.Provider, {
+      value: engineTheme,
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(RtlProvider, {
+        value: rtlValue,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(DefaultPropsProvider, {
+          value: engineTheme == null ? void 0 : engineTheme.components,
+          children
+        })
+      })
+    })
+  });
+}
 function _typeof(o2) {
   "@babel/helpers - typeof";
   return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
@@ -15228,7 +15322,7 @@ function toPropertyKey(t2) {
   var i2 = toPrimitive(t2, "string");
   return "symbol" == _typeof(i2) ? i2 : i2 + "";
 }
-const _excluded$t = ["component", "direction", "spacing", "divider", "children", "className", "useFlexGap"];
+const _excluded$u = ["component", "direction", "spacing", "divider", "children", "className", "useFlexGap"];
 const defaultTheme$2 = createTheme$2();
 const defaultCreateStyledComponent = styled$1("div", {
   name: "MuiStack",
@@ -15351,7 +15445,7 @@ function createStack(options = {}) {
       children,
       className,
       useFlexGap = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded$t);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded$u);
     const ownerState = {
       direction,
       spacing,
@@ -15649,7 +15743,7 @@ function blend(background, overlay, opacity, gamma = 1) {
     values: rgb
   });
 }
-const _excluded$s = ["mode", "contrastThreshold", "tonalOffset"];
+const _excluded$t = ["mode", "contrastThreshold", "tonalOffset"];
 const light = {
   // The colors used to style the text.
   text: {
@@ -15817,7 +15911,7 @@ function createPalette(palette) {
     mode = "light",
     contrastThreshold = 3,
     tonalOffset = 0.2
-  } = palette, other = _objectWithoutPropertiesLoose(palette, _excluded$s);
+  } = palette, other = _objectWithoutPropertiesLoose(palette, _excluded$t);
   const primary = palette.primary || getDefaultPrimary(mode);
   const secondary = palette.secondary || getDefaultSecondary(mode);
   const error = palette.error || getDefaultError(mode);
@@ -15911,7 +16005,7 @@ function createPalette(palette) {
   }, modes[mode]), other);
   return paletteOutput;
 }
-const _excluded$r = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
+const _excluded$s = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
 function round$2(value) {
   return Math.round(value * 1e5) / 1e5;
 }
@@ -15935,7 +16029,7 @@ function createTypography(palette, typography) {
     // Apply the CSS properties to all the variants.
     allVariants,
     pxToRem: pxToRem2
-  } = _ref, other = _objectWithoutPropertiesLoose(_ref, _excluded$r);
+  } = _ref, other = _objectWithoutPropertiesLoose(_ref, _excluded$s);
   const coef = fontSize / 14;
   const pxToRem = pxToRem2 || ((size) => `${size / htmlFontSize * coef}rem`);
   const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$2({
@@ -15991,7 +16085,7 @@ function createShadow(...px) {
   return [`${px[0]}px ${px[1]}px ${px[2]}px ${px[3]}px rgba(0,0,0,${shadowKeyUmbraOpacity})`, `${px[4]}px ${px[5]}px ${px[6]}px ${px[7]}px rgba(0,0,0,${shadowKeyPenumbraOpacity})`, `${px[8]}px ${px[9]}px ${px[10]}px ${px[11]}px rgba(0,0,0,${shadowAmbientShadowOpacity})`].join(",");
 }
 const shadows = ["none", createShadow(0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0), createShadow(0, 3, 1, -2, 0, 2, 2, 0, 0, 1, 5, 0), createShadow(0, 3, 3, -2, 0, 3, 4, 0, 0, 1, 8, 0), createShadow(0, 2, 4, -1, 0, 4, 5, 0, 0, 1, 10, 0), createShadow(0, 3, 5, -1, 0, 5, 8, 0, 0, 1, 14, 0), createShadow(0, 3, 5, -1, 0, 6, 10, 0, 0, 1, 18, 0), createShadow(0, 4, 5, -2, 0, 7, 10, 1, 0, 2, 16, 1), createShadow(0, 5, 5, -3, 0, 8, 10, 1, 0, 3, 14, 2), createShadow(0, 5, 6, -3, 0, 9, 12, 1, 0, 3, 16, 2), createShadow(0, 6, 6, -3, 0, 10, 14, 1, 0, 4, 18, 3), createShadow(0, 6, 7, -4, 0, 11, 15, 1, 0, 4, 20, 3), createShadow(0, 7, 8, -4, 0, 12, 17, 2, 0, 5, 22, 4), createShadow(0, 7, 8, -4, 0, 13, 19, 2, 0, 5, 24, 4), createShadow(0, 7, 9, -4, 0, 14, 21, 2, 0, 5, 26, 4), createShadow(0, 8, 9, -5, 0, 15, 22, 2, 0, 6, 28, 5), createShadow(0, 8, 10, -5, 0, 16, 24, 2, 0, 6, 30, 5), createShadow(0, 8, 11, -5, 0, 17, 26, 2, 0, 6, 32, 5), createShadow(0, 9, 11, -5, 0, 18, 28, 2, 0, 7, 34, 6), createShadow(0, 9, 12, -6, 0, 19, 29, 2, 0, 7, 36, 6), createShadow(0, 10, 13, -6, 0, 20, 31, 3, 0, 8, 38, 7), createShadow(0, 10, 13, -6, 0, 21, 33, 3, 0, 8, 40, 7), createShadow(0, 10, 14, -6, 0, 22, 35, 3, 0, 8, 42, 7), createShadow(0, 11, 14, -7, 0, 23, 36, 3, 0, 9, 44, 8), createShadow(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8)];
-const _excluded$q = ["duration", "easing", "delay"];
+const _excluded$r = ["duration", "easing", "delay"];
 const easing = {
   // This is the most common easing curve.
   easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -16035,7 +16129,7 @@ function createTransitions(inputTransitions) {
       easing: easingOption = mergedEasing.easeInOut,
       delay = 0
     } = options;
-    _objectWithoutPropertiesLoose(options, _excluded$q);
+    _objectWithoutPropertiesLoose(options, _excluded$r);
     return (Array.isArray(props) ? props : [props]).map((animatedProp) => `${animatedProp} ${typeof durationOption === "string" ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === "string" ? delay : formatMs(delay)}`).join(",");
   };
   return _extends$2({
@@ -16056,14 +16150,14 @@ const zIndex = {
   snackbar: 1400,
   tooltip: 1500
 };
-const _excluded$p = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
+const _excluded$q = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
 function createTheme(options = {}, ...args) {
   const {
     mixins: mixinsInput = {},
     palette: paletteInput = {},
     transitions: transitionsInput = {},
     typography: typographyInput = {}
-  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$p);
+  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$q);
   if (options.vars) {
     throw new Error(formatMuiErrorMessage$1(18));
   }
@@ -16090,8 +16184,8 @@ function createTheme(options = {}, ...args) {
   return muiTheme;
 }
 const defaultTheme$1 = createTheme();
-function useTheme$1() {
-  const theme2 = useTheme$2(defaultTheme$1);
+function useTheme$3() {
+  const theme2 = useTheme$5(defaultTheme$1);
   return theme2[THEME_ID] || theme2;
 }
 var createStyled$1 = {};
@@ -16135,7 +16229,7 @@ _interopRequireDefault$8(require$$5);
 _interopRequireDefault$8(require$$6);
 var _createTheme = _interopRequireDefault$8(require$$7);
 var _styleFunctionSx = _interopRequireDefault$8(require$$8);
-const _excluded$o = ["ownerState"], _excluded2$3 = ["variants"], _excluded3$1 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+const _excluded$p = ["ownerState"], _excluded2$3 = ["variants"], _excluded3$1 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
 function _getRequireWildcardCache$1(e2) {
   if ("function" != typeof WeakMap) return null;
   var r2 = /* @__PURE__ */ new WeakMap(), t2 = /* @__PURE__ */ new WeakMap();
@@ -16190,7 +16284,7 @@ function defaultOverridesResolver(slot) {
 function processStyleArg(callableStyle, _ref) {
   let {
     ownerState
-  } = _ref, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded$o);
+  } = _ref, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded$p);
   const resolvedStylesArg = typeof callableStyle === "function" ? callableStyle((0, _extends2.default)({
     ownerState
   }, props)) : callableStyle;
@@ -16355,6 +16449,17 @@ const styled = _default$1({
   defaultTheme: defaultTheme$1,
   rootShouldForwardProp
 });
+const _excluded$o = ["theme"];
+function ThemeProvider(_ref) {
+  let {
+    theme: themeInput
+  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded$o);
+  const scopedTheme = themeInput[THEME_ID];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider$1, _extends$2({}, props, {
+    themeId: scopedTheme ? THEME_ID : void 0,
+    theme: scopedTheme || themeInput
+  }));
+}
 function useDefaultProps(params) {
   return useDefaultProps$1(params);
 }
@@ -17061,7 +17166,7 @@ const Collapse = /* @__PURE__ */ reactExports.forwardRef(function Collapse2(inPr
     collapsedSize: collapsedSizeProp
   });
   const classes = useUtilityClasses$g(ownerState);
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const timer = useTimeout();
   const wrapperRef = reactExports.useRef(null);
   const autoTransitionDuration = reactExports.useRef();
@@ -17936,11 +18041,11 @@ function _interopRequireWildcard(e2, r2) {
 function isObjectEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
-function useTheme(defaultTheme2 = null) {
+function useTheme$2(defaultTheme2 = null) {
   const contextTheme = React.useContext(_styledEngine.ThemeContext);
   return !contextTheme || isObjectEmpty(contextTheme) ? defaultTheme2 : contextTheme;
 }
-default_1$8 = useThemeWithoutDefault.default = useTheme;
+default_1$8 = useThemeWithoutDefault.default = useTheme$2;
 var top = "top";
 var bottom = "bottom";
 var right = "right";
@@ -19690,7 +19795,7 @@ const styles$2 = {
   }
 };
 const Fade = /* @__PURE__ */ reactExports.forwardRef(function Fade2(props, ref) {
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const defaultTimeout = {
     enter: theme2.transitions.duration.enteringScreen,
     exit: theme2.transitions.duration.leavingScreen
@@ -20340,7 +20445,7 @@ const Grow = /* @__PURE__ */ reactExports.forwardRef(function Grow2(props, ref) 
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded$b);
   const timer = useTimeout();
   const autoTimeout = reactExports.useRef();
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const nodeRef = reactExports.useRef(null);
   const handleRef = useForkRef(nodeRef, children.ref, ref);
   const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
@@ -21063,7 +21168,7 @@ const styles = {
   }
 };
 const Zoom = /* @__PURE__ */ reactExports.forwardRef(function Zoom2(props, ref) {
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const defaultTimeout = {
     enter: theme2.transitions.duration.enteringScreen,
     exit: theme2.transitions.duration.leavingScreen
@@ -21264,7 +21369,7 @@ const SpeedDial = /* @__PURE__ */ reactExports.forwardRef(function SpeedDial2(in
     props: inProps,
     name: "MuiSpeedDial"
   });
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const defaultTransitionDuration = {
     enter: theme2.transitions.duration.enteringScreen,
     exit: theme2.transitions.duration.leavingScreen
@@ -21700,7 +21805,7 @@ const Tooltip = /* @__PURE__ */ reactExports.forwardRef(function Tooltip2(inProp
   const children = /* @__PURE__ */ reactExports.isValidElement(childrenProp) ? childrenProp : /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
     children: childrenProp
   });
-  const theme2 = useTheme$1();
+  const theme2 = useTheme$3();
   const isRtl = useRtl();
   const [childNode, setChildNode] = reactExports.useState();
   const [arrowRef, setArrowRef] = reactExports.useState(null);
@@ -22894,22 +22999,6 @@ window.addEventListener("storage", function() {
     return listener();
   });
 });
-var useMount = function(callback, arg2, arg3) {
-  var deps = [];
-  if (Array.isArray(arg2)) {
-    deps = arg2;
-  }
-  reactExports.useEffect(function() {
-    try {
-      var cleanup = callback();
-      return cleanup instanceof Function ? cleanup : void 0;
-    } catch (error) {
-      {
-        console.error("useMount callback error:", error);
-      }
-    }
-  }, deps);
-};
 var globalListeners = /* @__PURE__ */ new Map();
 var GlobalListenersContext = reactExports.createContext(globalListeners);
 function useEmitter(nameOrConfig, initialEventNameOrConfig, initialListener, config2) {
@@ -23076,6 +23165,31 @@ function useInject(name2, options) {
   }, []);
   return [result === null || result === void 0 ? void 0 : result[0], result === null || result === void 0 ? void 0 : result[1]];
 }
+function useTheme$1(arg1, arg2) {
+  var _a2 = reactExports.useState(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"), theme2 = _a2[0], setTheme = _a2[1];
+  var handleThemeChange = reactExports.useCallback(function(handler) {
+    return function(e2) {
+      var newTheme = e2.matches ? "dark" : "light";
+      setTheme(newTheme);
+      handler(newTheme);
+    };
+  }, []);
+  reactExports.useEffect(function() {
+    var matcher = window.matchMedia("(prefers-color-scheme: dark)");
+    var handler = null;
+    {
+      handler = handleThemeChange(function() {
+      });
+      matcher.addEventListener("change", handler);
+    }
+    return function() {
+      if (handler) {
+        matcher.removeEventListener("change", handler);
+      }
+    };
+  }, [arg1, arg2, handleThemeChange]);
+  return theme2;
+}
 if ("createRoot" in ReactDOM) {
   ReactDOM.createRoot;
 }
@@ -23113,6 +23227,21 @@ const ContentCopyRounded = createSvgIcon$1(/* @__PURE__ */ jsxRuntimeExports.jsx
 const ExitToAppOutlined = createSvgIcon$1(/* @__PURE__ */ jsxRuntimeExports.jsx("path", {
   d: "M10.09 15.59 11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"
 }), "ExitToAppOutlined");
+const themeMap = {
+  "light": {
+    borderColor: "#e8eaee"
+  },
+  "dark": {
+    borderColor: "#2e3440"
+  }
+};
+function useTheme() {
+  const browserTheme = useTheme$1();
+  const theme2 = reactExports.useMemo(() => {
+    return themeMap[browserTheme] || themeMap["light"];
+  }, [browserTheme]);
+  return theme2;
+}
 const renderAnchorList = (headings) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: headings == null ? void 0 : headings.map((heading2) => {
     var _a2;
@@ -23123,6 +23252,7 @@ const renderAnchorList = (headings) => {
   }) });
 };
 function AnchorList() {
+  const theme2 = useTheme();
   const article = useLoaderData();
   const [isWidthEnough, setIsWidthEnough] = reactExports.useState(true);
   const size = useResize();
@@ -23155,11 +23285,11 @@ function AnchorList() {
         position: "fixed",
         right: show ? "1rem" : "-320px",
         // "1rem" 是为了避免与右侧的页面全局滚动条重叠
-        background: "#fff",
         transition: "right 0.3s ease-in-out",
         height: "calc(var(--content-height) - 8px)",
         // 8px 大概是由于 header 的边框及 padding 造成的偏差
-        overflowY: "auto"
+        overflowY: "auto",
+        borderLeft: `1px solid ${theme2.borderColor}`
       },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -23775,7 +23905,8 @@ const Sidebar = () => {
   const [open, setOpen] = useMeta(initOpenMap);
   const nav = useNavigate();
   const url = useLocation();
-  useMount(() => {
+  const theme2 = useTheme();
+  reactExports.useEffect(() => {
     const path = decodeURIComponent(url.pathname.replace(/^.*\/notes\//, ""));
     const findSelectedTab = (_tabs, path2) => {
       for (const tab2 of _tabs) {
@@ -23797,7 +23928,7 @@ const Sidebar = () => {
     if (selectedTabId) {
       setSelected(selectedTabId);
     }
-  });
+  }, [url.pathname]);
   const [isWidthEnough, setIsWidthEnough] = reactExports.useState(true);
   const size = useResize();
   reactExports.useEffect(() => {
@@ -23833,13 +23964,12 @@ const Sidebar = () => {
       sx: {
         pr: "1rem",
         width: "280px",
-        borderRight: "1px solid #e8eaee",
+        borderRight: `1px solid ${theme2.borderColor}`,
         height: "calc(var(--content-height) - 8px)",
         // 8px 大概是由于 header 的边框及 padding 造成的偏差
         position: "fixed",
         left: show ? "1rem" : "-320px",
         // "1rem" 为左侧边距，与右侧栏的右边距保持一致
-        background: "#fff",
         transition: "left 0.3s ease-in-out",
         overflowY: "auto"
       },
@@ -38302,7 +38432,7 @@ function requireCsharp() {
       function re2(pattern, replacements, flags) {
         return RegExp(replace2(pattern, replacements), "");
       }
-      function nested(pattern, depthLog2) {
+      function nested2(pattern, depthLog2) {
         for (var i2 = 0; i2 < depthLog2; i2++) {
           pattern = pattern.replace(/<<self>>/g, function() {
             return "(?:" + pattern + ")";
@@ -38338,8 +38468,8 @@ function requireCsharp() {
       var nonContextualKeywords = keywordsToPattern(
         keywordKinds.type + " " + keywordKinds.typeDeclaration + " " + keywordKinds.other
       );
-      var generic = nested(/<(?:[^<>;=+\-*/%&|^]|<<self>>)*>/.source, 2);
-      var nestedRound = nested(/\((?:[^()]|<<self>>)*\)/.source, 2);
+      var generic = nested2(/<(?:[^<>;=+\-*/%&|^]|<<self>>)*>/.source, 2);
+      var nestedRound = nested2(/\((?:[^()]|<<self>>)*\)/.source, 2);
       var name2 = /@?\b[A-Za-z_]\w*\b/.source;
       var genericName = replace2(/<<0>>(?:\s*<<1>>)?/.source, [name2, generic]);
       var identifier2 = replace2(/(?!<<0>>)<<1>>(?:\s*\.\s*<<1>>)*/.source, [
@@ -38584,7 +38714,7 @@ function requireCsharp() {
         /\/(?![*/])|\/\/[^\r\n]*[\r\n]|\/\*(?:[^*]|\*(?!\/))*\*\/|<<0>>/.source,
         [regularStringOrCharacter]
       );
-      var roundExpression = nested(
+      var roundExpression = nested2(
         replace2(/[^"'/()]|<<0>>|\(<<self>>*\)/.source, [
           regularStringCharacterOrComment
         ]),
@@ -38625,7 +38755,7 @@ function requireCsharp() {
         }
       });
       var formatString = /:[^}\r\n]+/.source;
-      var mInterpolationRound = nested(
+      var mInterpolationRound = nested2(
         replace2(/[^"'/()]|<<0>>|\(<<self>>*\)/.source, [
           regularStringCharacterOrComment
         ]),
@@ -38635,7 +38765,7 @@ function requireCsharp() {
         mInterpolationRound,
         formatString
       ]);
-      var sInterpolationRound = nested(
+      var sInterpolationRound = nested2(
         replace2(
           /[^"'/()]|\/(?!\*)|\/\*(?:[^*]|\*(?!\/))*\*\/|<<0>>|\(<<self>>*\)/.source,
           [regularStringOrCharacter]
@@ -40698,7 +40828,7 @@ function requireCshtml() {
     (function(Prism3) {
       var commentLike = /\/(?![/*])|\/\/.*[\r\n]|\/\*[^*]*(?:\*(?!\/)[^*]*)*\*\//.source;
       var stringLike = /@(?!")|"(?:[^\r\n\\"]|\\.)*"|@"(?:[^\\"]|""|\\[\s\S])*"(?!")/.source + "|" + /'(?:(?:[^\r\n'\\]|\\.|\\[Uux][\da-fA-F]{1,8})'|(?=[^\\](?!')))/.source;
-      function nested(pattern, depthLog2) {
+      function nested2(pattern, depthLog2) {
         for (var i2 = 0; i2 < depthLog2; i2++) {
           pattern = pattern.replace(/<self>/g, function() {
             return "(?:" + pattern + ")";
@@ -40706,16 +40836,16 @@ function requireCshtml() {
         }
         return pattern.replace(/<self>/g, "[^\\s\\S]").replace(/<str>/g, "(?:" + stringLike + ")").replace(/<comment>/g, "(?:" + commentLike + ")");
       }
-      var round2 = nested(/\((?:[^()'"@/]|<str>|<comment>|<self>)*\)/.source, 2);
-      var square = nested(/\[(?:[^\[\]'"@/]|<str>|<comment>|<self>)*\]/.source, 2);
-      var curly = nested(/\{(?:[^{}'"@/]|<str>|<comment>|<self>)*\}/.source, 2);
-      var angle = nested(/<(?:[^<>'"@/]|<str>|<comment>|<self>)*>/.source, 2);
+      var round2 = nested2(/\((?:[^()'"@/]|<str>|<comment>|<self>)*\)/.source, 2);
+      var square = nested2(/\[(?:[^\[\]'"@/]|<str>|<comment>|<self>)*\]/.source, 2);
+      var curly = nested2(/\{(?:[^{}'"@/]|<str>|<comment>|<self>)*\}/.source, 2);
+      var angle = nested2(/<(?:[^<>'"@/]|<str>|<comment>|<self>)*>/.source, 2);
       var tagAttrs = /(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?/.source;
       var tagContent = /(?!\d)[^\s>\/=$<%]+/.source + tagAttrs + /\s*\/?>/.source;
       var tagRegion = /\B@?/.source + "(?:" + /<([a-zA-Z][\w:]*)/.source + tagAttrs + /\s*>/.source + "(?:" + (/[^<]/.source + "|" + // all tags that are not the start tag
       // eslint-disable-next-line regexp/strict
       /<\/?(?!\1\b)/.source + tagContent + "|" + // nested start tag
-      nested(
+      nested2(
         // eslint-disable-next-line regexp/strict
         /<\1/.source + tagAttrs + /\s*>/.source + "(?:" + (/[^<]/.source + "|" + // all tags that are not the start tag
         // eslint-disable-next-line regexp/strict
@@ -45254,12 +45384,12 @@ function requireIcuMessageFormat() {
   icuMessageFormat.aliases = [];
   function icuMessageFormat(Prism2) {
     (function(Prism3) {
-      function nested(source, level) {
+      function nested2(source, level) {
         if (level <= 0) {
           return /[]/.source;
         } else {
           return source.replace(/<SELF>/g, function() {
-            return nested(source, level - 1);
+            return nested2(source, level - 1);
           });
         }
       }
@@ -45276,7 +45406,7 @@ function requireIcuMessageFormat() {
           escape: escape2
         }
       };
-      var argumentSource = nested(
+      var argumentSource = nested2(
         /\{(?:[^{}']|'(?![{},'])|''|<STR>|<SELF>)*\}/.source.replace(
           /<STR>/g,
           function() {
@@ -45375,7 +45505,7 @@ function requireIcuMessageFormat() {
                 },
                 "arg-style-text": {
                   pattern: RegExp(
-                    /(^\s*,\s*(?=\S))/.source + nested(/(?:[^{}']|'[^']*'|\{(?:<SELF>)?\})+/.source, 8) + "$"
+                    /(^\s*,\s*(?=\S))/.source + nested2(/(?:[^{}']|'[^']*'|\{(?:<SELF>)?\})+/.source, 8) + "$"
                   ),
                   lookbehind: true,
                   alias: "string"
@@ -52855,7 +52985,7 @@ function requireQsharp() {
       function re2(pattern, replacements, flags) {
         return RegExp(replace2(pattern, replacements), "");
       }
-      function nested(pattern, depthLog2) {
+      function nested2(pattern, depthLog2) {
         for (var i2 = 0; i2 < depthLog2; i2++) {
           pattern = pattern.replace(/<<self>>/g, function() {
             return "(?:" + pattern + ")";
@@ -52919,7 +53049,7 @@ function requireQsharp() {
           alias: "operator"
         }
       });
-      var interpolationExpr = nested(
+      var interpolationExpr = nested2(
         replace2(/\{(?:[^"{}]|<<0>>|<<self>>)*\}/.source, [regularString]),
         2
       );
@@ -67609,10 +67739,7 @@ function Md({ children }) {
           /* @__PURE__ */ jsxRuntimeExports.jsx(Img, { width: "100%", height: "auto", ...props }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("figcaption", { children: alt })
         ] }),
-        blockquote: ({ children: children2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("blockquote", { className: "markdown-blockquote", children: [
-          children2,
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "markdown-blockquote-shadow", children: children2 })
-        ] }),
+        blockquote: ({ children: children2 }) => /* @__PURE__ */ jsxRuntimeExports.jsx("blockquote", { className: "markdown-blockquote", children: children2 }),
         a: ({ children: children2 = [], href: _href, target: _target, ...props }) => {
           const isTargetBlank = _href == null ? void 0 : _href.endsWith("target=_blank");
           const href = isTargetBlank ? _href == null ? void 0 : _href.replace("?target=_blank", "") : _href;
@@ -100156,6 +100283,13 @@ const utils = {
     return encodeURI(str);
   }
 };
+function About() {
+  const theme2 = useTheme$1();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "关于 CS2 笔记本" }),
+    theme2
+  ] });
+}
 const tabsFlatten = flattenTabs();
 const findPathInTabs = (_tabs, filepath) => {
   for (const tab2 of _tabs) {
@@ -100259,6 +100393,10 @@ const router = createBrowserRouter(
               headings: getHeadings(text2, true)
             };
           }
+        },
+        {
+          path: "about",
+          element: /* @__PURE__ */ jsxRuntimeExports.jsx(About, {})
         }
       ]
     }
@@ -100269,9 +100407,21 @@ const router = createBrowserRouter(
   }
 );
 const Views = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider, { router });
+const lightTheme = createTheme({
+  palette: {
+    mode: "light"
+  }
+});
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark"
+  }
+});
 function App() {
+  const theme2 = useTheme$1();
+  const muiTheme = theme2 === "dark" ? darkTheme : lightTheme;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Views, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { theme: muiTheme, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Views, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Ie, {})
   ] });
 }

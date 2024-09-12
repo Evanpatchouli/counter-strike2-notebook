@@ -24,7 +24,6 @@
   width: 100vw;
   box-sizing: border-box;
   height: 80px;
-  background: #fff;
   box-shadow: 0 1px 1px rgba(43, 149, 255, 0.3);
   display: flex;
   z-index: 100;
