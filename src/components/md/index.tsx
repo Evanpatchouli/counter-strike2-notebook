@@ -60,12 +60,7 @@ export default function Md({ children }: { children: string }) {
             <figcaption>{alt}</figcaption>
           </figure>
         ),
-        blockquote: ({ children }) => (
-          <blockquote className="markdown-blockquote">
-            {children}
-            <div className="markdown-blockquote-shadow">{children}</div>
-          </blockquote>
-        ),
+        blockquote: ({ children }) => <blockquote className="markdown-blockquote">{children}</blockquote>,
         a: ({ children = [], href: _href, target: _target, ...props }) => {
           const isTargetBlank = _href?.endsWith("target=_blank");
           const href = isTargetBlank ? _href?.replace("?target=_blank", "") : _href;

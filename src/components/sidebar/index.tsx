@@ -122,8 +122,7 @@ const Sidebar: React.FC = () => {
   const nav = useNavigate();
   const url = useLocation();
 
-  // 只需要在组件挂载时执行一次，因此使用 useMount
-  useMount(() => {
+  useEffect(() => {
     // 根据路由获取当前选中的 tab，并设置 selected，同时递归遍历 tabs，展开所有父级 tab（如果有的话）
     const path = decodeURIComponent(url.pathname.replace(/^.*\/notes\//, ""));
     const findSelectedTab = (_tabs: typeof tabs, path: string): string | null => {
@@ -148,7 +147,7 @@ const Sidebar: React.FC = () => {
     if (selectedTabId) {
       setSelected(selectedTabId);
     }
-  });
+  }, [url.pathname, setOpen]);
 
   const [isWidthEnough, setIsWidthEnough] = useState(true);
 
@@ -193,7 +192,7 @@ const Sidebar: React.FC = () => {
         borderRight: "1px solid #e8eaee",
         height: "calc(var(--content-height) - 8px)", // 8px 大概是由于 header 的边框及 padding 造成的偏差
         position: "fixed",
-        left: show ? "1rem" : "-320px",  // "1rem" 为左侧边距，与右侧栏的右边距保持一致
+        left: show ? "1rem" : "-320px", // "1rem" 为左侧边距，与右侧栏的右边距保持一致
         background: "#fff",
         transition: "left 0.3s ease-in-out",
         overflowY: "auto",

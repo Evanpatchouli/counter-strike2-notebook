@@ -47,31 +47,4 @@
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 1.5rem;
-  /** 用伪元素添加斜体阴影*/
-  position: relative;
-}
-
-.markdown-blockquote-shadow {
-  position: absolute;
-  top: -0.65rem;
-  left: 0;
-
-  padding: 0rem 1.78rem;
-  z-index: 1;
-  color: rgba(0, 0, 0, 0.07);
-  transform: translate(-2px, 2px) skew(-10deg);
-  font-style: italic;
-  white-space: pre;
-
-  /* position: absolute;
-  top: -0.5rem;
-  left: calc(1px + 1.5rem + 1.3rem);
-
-  padding: 0rem 0rem;
-  z-index: 1;
-  color: rgba(0, 0, 0, 0.07);
-  transform: translate(-2px, 2px) skew(-10deg);
-  font-style: normal;
-  white-space: pre;
-  transform: skewX(-70deg); */
 }
