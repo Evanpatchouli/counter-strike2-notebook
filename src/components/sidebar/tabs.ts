@@ -200,8 +200,53 @@ const tabs = [
               },
             ],
           },
+          {
+            id: "2-2-2",
+            title: "闪光弹",
+            icon: "",
+            type: "dropdown",
+            children: [
+              {
+                id: "2-2-2-1",
+                title: "沙地闪",
+                path: "道具手册/炙热沙城/闪光弹/沙地闪",
+                icon: "",
+                type: "button",
+              },
+              {
+                id: "2-2-2-2",
+                title: "中门闪",
+                path: "道具手册/炙热沙城/闪光弹/中门闪",
+                icon: "",
+                type: "button",
+              },
+            ]
+          }
         ],
       },
+      {
+        id: "2-3",
+        title: "炼狱小镇",
+        icon: "",
+        type: "dropdown",
+        children: [
+          {
+            id: "2-3-1",
+            title: "烟雾弹",
+            icon: "",
+            type: "dropdown",
+            children: [
+              {
+                id: "2-3-1-1",
+                title: "FAZE烟",
+                path: "道具手册/炼狱小镇/烟雾弹/FAZE烟",
+                icon: "",
+                type: "button",
+              }
+            ]
+          }
+        ],
+      }
     ],
   },
   {
